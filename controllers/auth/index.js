@@ -1,4 +1,6 @@
 const register = require('./register');
+const verify = require('./verify');
+const resendVerify = require('./resendVerify');
 const login = require('./login');
 const getCurrent = require('./getCurrent');
 const logout = require('./logout');
@@ -12,4 +14,6 @@ module.exports = {
   logout,
   upDateSubscription,
   upDateAvatar,
+  verify,
+  resendVerify,
 };
