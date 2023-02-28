@@ -25,7 +25,7 @@ router.post(
 
 router.delete('/:id', authenticate, isValidId, ctrlWrapper(ctrl.deleteContact));
 
-router.put(
+router.patch(
   '/:id',
   authenticate,
   isValidId,

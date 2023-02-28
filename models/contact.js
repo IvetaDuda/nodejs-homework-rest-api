@@ -2,22 +2,23 @@ const { Schema, model } = require('mongoose');
 const Joi = require('joi');
 const { hendleSaveError } = require('../helpers');
 
-const validPhone = /^[0-9]+$/;
+// const validPhone = /^[0-9]+$/;
+const validPhone = /^\+380\d{9}$/;
 
 const contactSchema = new Schema(
   {
     name: {
       type: String,
-      required: [true, 'Set name for contact'],
+      // required: [true, 'Set name for contact'],
     },
     phone: {
       type: String,
-      required: true,
+      // required: true,
       match: validPhone,
     },
     email: {
       type: String,
-      required: true,
+      // required: true,
     },
     favorite: {
       type: Boolean,
@@ -35,10 +36,9 @@ contactSchema.post('save,', hendleSaveError);
 
 const contactAddSchema = Joi.object({
   name: Joi.string().min(3).max(30).required(),
-  email: Joi.string().email().required(),
+  // email: Joi.string().email().required(),
   phone: Joi.string()
-    .length(9)
-    .pattern(/^[0-9]+$/)
+    .pattern(/^\+380\d{9}$/)
     .required(),
   favorite: Joi.boolean(),
 });

@@ -8,7 +8,15 @@ const { RequestError } = require('../../helpers');
 const { SEKRET_KEY } = process.env;
 
 const login = async (req, res) => {
-  const { password, email, subscription } = req.body;
+  const {
+    password,
+    email,
+    subscription,
+    name,
+    avatarURL,
+    userPhone,
+    userBirthday,
+  } = req.body;
   const user = await User.findOne({ email });
   const passwordCompare = await bcrypt.compare(password, user.password);
   if (!user || !passwordCompare) {
@@ -28,7 +36,11 @@ const login = async (req, res) => {
     token,
     user: {
       email,
+      name,
+      avatarURL,
       subscription,
+      userPhone,
+      userBirthday,
     },
   });
 };

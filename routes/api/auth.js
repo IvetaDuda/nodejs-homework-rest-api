@@ -33,6 +33,13 @@ router.get('/users/current', authenticate, ctrlWrapper(ctrl.getCurrent));
 router.get('/users/logout', authenticate, ctrlWrapper(ctrl.logout));
 
 router.patch(
+  '/users/current',
+  authenticate,
+  validateBody(schemas.updateUserCurrent),
+  ctrlWrapper(ctrl.upDateCurrent)
+);
+
+router.patch(
   '/users',
   authenticate,
   validateBody(schemas.updateSubscriptionSchema),
@@ -45,5 +52,6 @@ router.patch(
   upload.single('avatar'),
   ctrlWrapper(ctrl.upDateAvatar)
 );
+// router.delete('/users/avatars', authenticate, ctrlWrapper(ctrl.deleteAvatar));
 
 module.exports = router;

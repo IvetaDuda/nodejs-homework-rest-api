@@ -6,6 +6,8 @@ const getCurrent = require('./getCurrent');
 const logout = require('./logout');
 const upDateSubscription = require('./upDateSubscription');
 const upDateAvatar = require('./upDateAvatar');
+const upDateCurrent = require('./upDateCurrent');
+const deleteAvatar = require('./deleteAvatar');
 
 module.exports = {
   register,
@@ -16,4 +18,6 @@ module.exports = {
   upDateAvatar,
   verify,
   resendVerify,
+  upDateCurrent,
+  deleteAvatar,
 };
