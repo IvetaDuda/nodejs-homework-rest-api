@@ -1,4 +1,4 @@
-const { BASE_URL } = process.env;
+// const { BASE_URL } = process.env;
 
 const createVerifyEmail = (email, verificationToken) => {
   const mail = {
