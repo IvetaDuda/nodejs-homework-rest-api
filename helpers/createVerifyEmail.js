@@ -12,7 +12,7 @@ const createVerifyEmail = (email, verificationToken) => {
     html: `<div>
     <h1>Welcome to the phonebook server</h1>
     <p>click to confirm registration &darr;</p>
-    <a target="_blank" href="${BASE_URL}/api/auth/users/verify/${verificationToken}">Press to confirm</a>
+    <a target="_blank" href="https://phonebook-server-h3zp.onrender.com/api/auth/users/verify/${verificationToken}">Press to confirm</a>
     </div>`,
   };
   return mail;
